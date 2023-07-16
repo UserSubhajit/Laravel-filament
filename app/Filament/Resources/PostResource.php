@@ -47,7 +47,6 @@ class PostResource extends Resource
                     ->onColor('success')
                     ->offColor('danger'),
                     RichEditor::make('content'),
-                    SpatieMediaLibraryFileUpload::make('thumbnail')->collection('posts'),
                 ])
             ]);
     }
@@ -62,7 +61,7 @@ class PostResource extends Resource
                 TextColumn::make('category.name')->limit(50)->sortable(),
                 ToggleColumn::make('is_published'),
                 TextColumn::make('content')->limit(50)->sortable()->html(),
-                SpatieMediaLibraryImageColumn::make('thumbnail')->collection('posts'),
+
             ])
             ->filters([
                 //
